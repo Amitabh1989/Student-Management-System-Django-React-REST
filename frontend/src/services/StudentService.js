@@ -56,3 +56,17 @@ export async function addStudents(newData) {
         throw error;
     }
 }
+
+
+// Using Async/Await code style here for delete
+export async function deleteStudents(studentId) {
+    try {
+        console.log("In Edit Student : ", studentId);
+        const endpoint = `/students/${studentId}/`;
+        const response = await api.delete(endpoint);
+        return response.data;
+    } catch (error) {
+        console.log("In Delete Student error service : ", error);
+        throw error;
+    }
+}

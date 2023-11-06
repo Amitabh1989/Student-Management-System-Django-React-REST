@@ -47,8 +47,8 @@ class StudentViewSetAPI(viewsets.ViewSet):
         serializer.save()
         return Response(serializer.data, status=status.HTTP_200_OK)
     
-    def delete(self, request, *args, **kwargs):
-        instance = self.get_object()
+    def delete(self, request, pk=None, *args, **kwargs):
+        instance = self.queryset.filter(pk=pk).first()
         instance.delete()
         return Response({"msg": "Student record deleted"},status=status.HTTP_204_NO_CONTENT)
 

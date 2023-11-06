@@ -5,6 +5,7 @@ import { Home } from './elements/Home';
 import Navigation from './elements/Navigation'
 import Students from './elements/Students';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import DeleteStudentPage from './elements/DeleteStudent';
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/students" element={<Students />} />
+            <Route path="/delete/:studentId" element={<DeleteStudentPage />} />
           </Routes>
         </div>
       </Router>

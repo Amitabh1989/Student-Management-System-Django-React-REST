@@ -157,15 +157,13 @@ function Students() {
 
                         {/* <Button variant="filled" size="sm" ripple={true} onClick={() => openCrudModal("delete", stu)}> */}
                         <Button variant="filled" size="sm" ripple={true}>
-                            {/* <Link
-                                to={{
-                                    pathname: `/delete/${stu.id}`,
-                                    state: { student: stu },
-                                }}
-                            > 
-                                Delete
-                            </Link> */}
-                            <Link to={`/delete/${stu.id}`} state={{ student: stu }}>Delete</Link>
+                            <Router>
+                                <Routes>
+                                    <Route path="/delete/:studentId">
+                                        <DeleteStudentPage student={stu} />
+                                    </Route>
+                                </Routes>
+                            </Router>
                         </Button>
                     </div>
                 </td>
@@ -190,8 +188,19 @@ function Students() {
         {isDetailModalOpen && (
             <DetailStudentModal student={selectedStudent} closeModal={closeModal} />
         )}
+
     </div>
   );
 }
 
 export default Students;
+
+
+                                    {/* <Link
+                                        to={{
+                                            pathname: `/delete/${stu.id}`,
+                                            state: { student: stu },
+                                        }}
+                                    > 
+                                        Delete
+                                    </Link> */}
