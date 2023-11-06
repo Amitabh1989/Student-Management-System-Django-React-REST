@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.table-container {
+  max-width: calc(100% - 280px); /* Adjust the width as needed to accommodate your sidebar width */
+  margin-left: 260px; /* Adjust the margin to match your sidebar's width */
+  margin-right: 5px;
+  margin-top: 10px;
+}
+
+.modal-scroll {
+  overflow-y: auto; /* This enables vertical scrollbar when needed */
+  max-height: calc(100% - 5rem); /* Adjust the height as needed to fit your design */
+}
